@@ -1,21 +1,23 @@
 package com.example.database
 
 import android.os.Bundle
-import android.provider.ContactsContract.Data
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.database.databinding.ActivityMainBinding
+import com.example.database.databinding.ActivityMainReferencesBinding
+import com.example.database.model.DataClass
 
-class MainActivity : AppCompatActivity() {
+class MainActivityReference : AppCompatActivity() {
 
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityMainReferencesBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         // Setup View Binding
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityMainReferencesBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        DBHelper(this, null).nowDate()
 
         binding.cari.setOnClickListener{
             val db = DBHelper(this, null)
@@ -152,6 +154,7 @@ class MainActivity : AppCompatActivity() {
                     val id = datas.getInt(0)
                     val name = datas.getString(1)
                     val age = datas.getString(2)
+
 
                     lists.add(DataClass(id, name, age))
                 }

@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">Database</string>
+
+    <string name="dummy_panjang">Back then, I had no idea what I was doing. I was learning the tool on the go and scrambling to keep up with my peers who seemed to be miles ahead of me when it came to proficiency in the tool.</string>
+    <string name="edit"><u>Edit</u></string>
+
+
+    <string name="ek_img_content">ExportKit Image</string>
+    <string name="id__safhnajfnjkea_string">id: safhnajfnjkea</string>
+    <string name="nama_toko_string">Toko Miniarti</string>
+    <string name="waktu_string">19 September 2024 19:00</string>
+    <string name="__rp_900_000_string">+Rp 900.000</string>
+    <string name="jalan_timah_raya_ii_string">Jalan Timah Raya II</string>
+    <string name="catatan_string">Catatan</string>
+    <string name="mantap_string">Mantap</string>
+    <string name="batalkan_string">Batalkan</string>
+    <string name="simpan_string">Simpan</string>
 </resources>

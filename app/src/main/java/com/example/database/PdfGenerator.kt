@@ -1,13 +1,10 @@
 package com.example.database
 
 import android.content.Context
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
 import android.os.Environment
-import android.provider.DocumentsContract
 import android.util.Log
 import android.widget.Toast
-import com.google.firebase.inappmessaging.model.ImageData
+import com.example.database.model.DataClass
 import com.itextpdf.text.BaseColor
 import com.itextpdf.text.Document
 import com.itextpdf.text.Chunk
@@ -15,13 +12,10 @@ import com.itextpdf.text.Font
 import com.itextpdf.text.pdf.PdfWriter
 import com.itextpdf.text.Paragraph
 import com.itextpdf.text.Element
-import com.itextpdf.text.Image
 import com.itextpdf.text.pdf.PdfPTable
 import java.io.File
 import java.io.FileOutputStream
 //import com.itextpdf.text.
-import com.itextpdf.text.pdf.PdfDocument
-import java.io.ByteArrayOutputStream
 
 class PdfGenerator {
 

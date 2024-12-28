@@ -5,4 +5,34 @@
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
+    <color name="greenMoney">#008516</color>
+    <color name="redMoney">#E53935</color>
+
+    <color name="pink">#FF9201</color>
+
+    <color name="alpha">#FFD181</color>
+    <color name="beta">#FFAB41</color>
+    <color name="gamma">#FF9201</color>
+    <color name="delta">#FF6D00</color>
+
+    <color name="utama">#FF9201</color>
+    <color name="second">#FFAB41</color>
+
+<!--    <color name="colorPrimary">#008577</color>-->
+<!--    <color name="colorPrimaryDark">#00574B</color>-->
+<!--    <color name="colorAccent">#D81B60</color>-->
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+<!--    <color name="black">#FF000000</color>-->
+<!--    <color name="white">#FFFFFFFF</color>-->
+
+    <color name="_bg__iphone_16_pro___2_ek2_color">#988147</color>
+    <color name="id__safhnajfnjkea_color">#000000</color>
+    <color name="waktu_color">#7A7A7A</color>
+    <color name="__rp_900_000_color">#008416</color>
+    <color name="batalkan_color">#FFFFFF</color>
+    <color name="simpan_color">#FFFEFE</color>
 </resources>
