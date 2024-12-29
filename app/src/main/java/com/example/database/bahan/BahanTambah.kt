@@ -5,7 +5,8 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import com.example.database.DBHelper
+import com.example.database.Formatter
+import com.example.database.services.DBHelper
 import com.example.database.databinding.ActivityBahanTambahBinding
 
 class BahanTambah : AppCompatActivity() {
@@ -33,7 +34,7 @@ class BahanTambah : AppCompatActivity() {
             val hargaValue = binding.harga.text.toString()
             var num : Int
             try {
-                num = hargaValue.toInt()
+                num = Formatter.onlyInt(hargaValue)
             } catch (e: NumberFormatException) {
                 num = 0 // Handle invalid input
             }
@@ -57,10 +58,7 @@ class BahanTambah : AppCompatActivity() {
                 Toast.makeText(this, "Please enter both name and age", Toast.LENGTH_LONG).show()
             }
 
-            Intent(this, ActivityBahan::class.java).also {
-                startActivity(it)
-                finish()
-            }
+            finish()
 
         }
 

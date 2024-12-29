@@ -4,7 +4,7 @@
     <selectionStates>
       <SelectionState runConfigName="app">
         <option name="selectionMode" value="DROPDOWN" />
-        <DropdownSelection timestamp="2024-12-23T10:50:38.282007Z">
+        <DropdownSelection timestamp="2024-12-29T07:28:28.408025200Z">
           <Target type="DEFAULT_BOOT">
             <handle>
               <DeviceId pluginId="LocalEmulator" identifier="path=C:\Users\sabil\.android\avd\Medium_Phone_API_tiramisu.avd" />

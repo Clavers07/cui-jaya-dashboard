@@ -9,6 +9,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 import androidx.recyclerview.widget.RecyclerView
+import com.example.database.Formatter
 import com.example.database.R
 import com.example.database.model.Pemasukan
 import com.example.database.model.SumberJoinTotal
@@ -26,7 +27,7 @@ class SumberAdapter(private var sumberList: List<SumberJoinTotal>, var limited: 
     override fun onBindViewHolder(holder: viewHolder, position: Int) {
         val sumber = sumberList[position]
         holder.nama.text = sumber.nama
-        holder.total.text = "Rp " + sumber.total.toString()
+        holder.total.text = Formatter.toCurrency(sumber.total)
         holder.tanggal.text = sumber.tanggal
         holder.alamat.text = sumber.alamat
 

@@ -9,11 +9,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.doOnPreDraw
-import com.example.database.DBHelper
+import com.example.database.Formatter
+import com.example.database.services.DBHelper
 import com.example.database.R
 import com.example.database.databinding.ActivityPemasukanDetailBinding
-import com.example.database.databinding.ActivitySumberDetailBinding
-import com.example.database.sumber.ActivitySumber
 
 class PemasukanDetail : AppCompatActivity() {
 
@@ -62,7 +61,7 @@ class PemasukanDetail : AppCompatActivity() {
                     // Mengambil nilai dari EditText
 
                     val nama = binding.nama.text.toString().trim()
-                    val nilai = binding.nilai.text.toString().toInt()
+                    val nilai = Formatter.onlyInt(binding.nilai.text.toString())
                     val catatan = binding.catatan.text.toString()
 
                     // Cek apakah input valid
@@ -90,21 +89,12 @@ class PemasukanDetail : AppCompatActivity() {
                 binding.id.visibility = View.VISIBLE
                 binding.hapus.visibility = View.VISIBLE
 
-//                val id = intent.getStringExtra("ID")
-//
-//                binding.id.text = "ID " + id
-//                binding.nama.setText(intent.getStringExtra("NAMA"))
-//                binding.alamat.setText(intent.getStringExtra("ALAMAT"))
-//                binding.catatan.setText(intent.getStringExtra("CATATAN"))
-//                binding.nilai.setText(intent.getIntExtra("NILAI", 0).toString())
-//                binding.tanggal.setText(intent.getStringExtra("TANGGAL"))
-
                 binding.root.doOnPreDraw { // Use post to run on the UI thread after layout is inflated
                     binding.id.setText("ID: " + intent.getStringExtra("ID"))
-                    Toast.makeText(this, intent.getIntExtra("ID", 0).toString(), Toast.LENGTH_LONG).show()
+//                    Toast.makeText(this, intent.getIntExtra("ID", 0).toString(), Toast.LENGTH_LONG).show()
                     binding.nama.setText(intent.getStringExtra("NAMA"))
                     binding.alamat.setText(intent.getStringExtra("ALAMAT"))
-                    binding.nilai.setText(intent.getIntExtra("NILAI", 0).toString())
+                    binding.nilai.setText(Formatter.easyRead(intent.getIntExtra("NILAI", 0)))
                     binding.catatan.setText(intent.getStringExtra("CATATAN"))
                     binding.tanggal.setText(intent.getStringExtra("TANGGAL"))
                 }
@@ -114,7 +104,7 @@ class PemasukanDetail : AppCompatActivity() {
 
                     val db = DBHelper(this, null)
                     db.deletePemasukan(binding.id.text.toString().replace("ID: ", ""))
-                    Toast.makeText(this, binding.id.text.toString().replace("ID: ", ""), Toast.LENGTH_LONG).show()
+//                    Toast.makeText(this, binding.id.text.toString().replace("ID: ", ""), Toast.LENGTH_LONG).show()
 
                     Intent(this, ActivityPemasukan::class.java).also {
                         Toast.makeText(this, "Data sumber id ${id.toString()} berhasil dihapus", Toast.LENGTH_LONG).show()
@@ -127,7 +117,7 @@ class PemasukanDetail : AppCompatActivity() {
                 binding.simpan.setOnClickListener {
 
                     val db = DBHelper(this, null)
-                    val id = binding.id.text.toString().replace("ID: ", "").toInt()
+                    val id = Formatter.onlyInt(binding.id.text.toString())
                     val nama = binding.nama.text.toString()
                     val alamat = binding.alamat.text.toString()
                     val nilai = binding.nilai.text.toString().toInt()

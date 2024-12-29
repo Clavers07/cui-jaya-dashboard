@@ -8,15 +8,21 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.database.DBHelper
+import com.example.database.Formatter
+import com.example.database.services.DBHelper
 import com.example.database.R
 import com.example.database.databinding.ActivityPemasukanBinding
+import com.example.database.model.DataClass
 import com.example.database.model.Pemasukan
+import com.example.database.services.PdfGenerator
 import com.example.database.sumber.ActivitySumber
+import kotlin.properties.Delegates
 
 class ActivityPemasukan : AppCompatActivity() {
 
     private lateinit var binding: ActivityPemasukanBinding
+
+    var sum: Int = 0
 
     private lateinit var pemasukan: MutableList<Pemasukan>
     private lateinit var pemasukanAdapter: PemasukanAdapter
@@ -53,18 +59,44 @@ class ActivityPemasukan : AppCompatActivity() {
         assignToAdapter()
 
 
+        val pdf = PdfGenerator()
+        binding.pdf.setOnClickListener {
+            val db = DBHelper(this, null)
+            val date = db.timeNow("dd_MMM_yyyy-HH_mm_ss")
+
+            val data = DataClass(1, "Agus", "23")
+            val lists = mutableListOf<DataClass>()
+            lists.add(data)
+
+            val datas = db.getName()
+
+            if (datas != null) {
+                while(datas.moveToNext()) {
+                    val id = datas.getInt(0)
+                    val name = datas.getString(1)
+                    val age = datas.getString(2)
+
+
+                    lists.add(DataClass(id, name, age))
+                }
+            }
+            pdf.pemasukanPdf(this, pemasukan, date, "Laporan_Pemasukan")
+        }
+
+
     }
 
     override fun onResume() {
         super.onResume()
 
-        pemasukan.removeAll(pemasukan)
         getLists()
         assignToAdapter()
     }
 
     fun getLists() {
         val db = DBHelper(this, null)
+        pemasukan.clear()
+        sum = 0
 
         // Mendapatkan semua data nama dari database
         val cursor = db.getPemasukan()
@@ -88,6 +120,8 @@ class ActivityPemasukan : AppCompatActivity() {
                 val keterangan = cursor.getString(catatanColumnIndex)
                 val tanggal = cursor.getString(tanggalColumnIndex)
 
+                sum += nilai
+
                 val data: Pemasukan = Pemasukan(id, id_sumber, nama, nilai, keterangan, tanggal)
                 // Menambahkan data ke TextView
                 pemasukan.add(data)
@@ -96,11 +130,13 @@ class ActivityPemasukan : AppCompatActivity() {
             // Tutup cursor setelah digunakan
             cursor.close()
         } else {
-            Toast.makeText(this, "No data found", Toast.LENGTH_LONG).show()
+//            Toast.makeText(this, "No data found", Toast.LENGTH_LONG).show()
         }
     }
 
     fun assignToAdapter() {
+        binding.sum.text = Formatter.toCurrency(sum)
+
         val recyclerView = binding.list
         recyclerView.layoutManager = LinearLayoutManager(this)
         pemasukanAdapter = PemasukanAdapter(pemasukan)

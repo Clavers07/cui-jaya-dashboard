@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.doOnPreDraw
-import com.example.database.DBHelper
+import com.example.database.services.DBHelper
 import com.example.database.R
 import com.example.database.databinding.ActivitySumberDetailBinding
 
@@ -61,10 +61,7 @@ class SumberDetail : AppCompatActivity() {
                         if (res) {
                             Toast.makeText(this, "$nama added to database", Toast.LENGTH_LONG).show()
 
-                            Intent(this, ActivitySumber::class.java).also {
-                                startActivity(it)
-                                finish()
-                            }
+                            finish()
                         } else {
                             Toast.makeText(this, "Failed to add $nama to database", Toast.LENGTH_LONG).show()
                         }
@@ -90,16 +87,14 @@ class SumberDetail : AppCompatActivity() {
                     val db = DBHelper(this, null)
                     db.deleteSumber(binding.id.text.toString().replace("ID: ", "").toInt())
 
-                    Intent(this, ActivitySumber::class.java).also {
-                        Toast.makeText(this, "Data sumber id ${id.toString()} berhasil dihapus", Toast.LENGTH_LONG).show()
-                        startActivity(it)
-                        finish()
-                    }
+                    Toast.makeText(this, "Data sumber id ${id.toString()} berhasil dihapus", Toast.LENGTH_LONG).show()
+
+                    finish()
                 }
 
                 binding.root.doOnPreDraw { // Use post to run on the UI thread after layout is inflated
                     binding.id.setText("ID: " + intent.getStringExtra("ID"))
-                    Toast.makeText(this, intent.getIntExtra("ID", 0).toString(), Toast.LENGTH_LONG).show()
+//                    Toast.makeText(this, intent.getIntExtra("ID", 0).toString(), Toast.LENGTH_LONG).show()
                     binding.nama.setText(intent.getStringExtra("NAMA"))
                     binding.alamat.setText(intent.getStringExtra("ALAMAT"))
                     binding.keterangan.setText(intent.getStringExtra("KETERANGAN"))
@@ -123,10 +118,7 @@ class SumberDetail : AppCompatActivity() {
                             Toast.makeText(this, "update data id $id", Toast.LENGTH_LONG).show()
 
                             // Pindah halaman
-                            val intent = Intent(this, ActivitySumber::class.java).also {
-                                startActivity(it)
-                                finish()
-                            }
+                            finish()
                         } else {
                             // Menampilkan pesan error jika nama tidak ditemukan
                             Toast.makeText(this, "Name not found", Toast.LENGTH_LONG).show()

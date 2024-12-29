@@ -7,7 +7,8 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.database.DBHelper
+import com.example.database.Formatter
+import com.example.database.services.DBHelper
 import com.example.database.R
 import com.example.database.model.Bahan
 
@@ -23,7 +24,7 @@ class BahanAdapter(private var bahanList: List<Bahan>) :
     override fun onBindViewHolder(holder: viewHolder, position: Int) {
         val bahan = bahanList[position]
         holder.namaBahan.text = bahan.id.toString() + ": " + bahan.name
-        holder.harga.text = "Rp " + bahan.harga.toString()
+        holder.harga.text = Formatter.toCurrency(bahan.harga)
         holder.date.text = bahan.tanggal
 
         holder.hapus.setOnClickListener {
@@ -36,7 +37,7 @@ class BahanAdapter(private var bahanList: List<Bahan>) :
             val intent = Intent(holder.itemView.context, BahanEdit::class.java)
             intent.putExtra("ID", bahan.id.toString())
             intent.putExtra("NAMA_BAHAN", bahan.name)
-            intent.putExtra("HARGA", bahan.harga.toString())
+            intent.putExtra("HARGA", bahan.harga)
 
             holder.itemView.context.startActivity(intent)
         }

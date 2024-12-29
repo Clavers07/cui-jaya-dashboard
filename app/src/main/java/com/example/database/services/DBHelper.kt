@@ -1,4 +1,4 @@
-package com.example.database
+package com.example.database.services
 
 import android.content.ContentValues
 import android.content.Context
@@ -6,7 +6,6 @@ import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import android.util.Log
-import android.widget.Toast
 
 class DBHelper(context: Context, factory: SQLiteDatabase.CursorFactory?) :
     SQLiteOpenHelper(context, DATABASE_NAME, factory, DATABASE_VERSION) {
@@ -52,7 +51,7 @@ class DBHelper(context: Context, factory: SQLiteDatabase.CursorFactory?) :
         val defSumber = """
             INSERT INTO sumber (nama, alamat, keterangan, tanggal)
             VALUES
-                ('Langsung', '-', 'Penjualan secara langsung ke pelanggan', '${timeNow("dd MMMM yyyy")}'),
+                ('Penjualan Langsung', '-', 'Penjualan secara langsung ke pelanggan', '${timeNow("dd MMMM yyyy")}'),
                 ('Pesanan', '-', 'Produk dipesan oleh pelanggan', '${timeNow("dd MMMM yyyy")}')
         """.trimIndent()
 
@@ -81,6 +80,16 @@ class DBHelper(context: Context, factory: SQLiteDatabase.CursorFactory?) :
             )
         """.trimIndent()
         db.execSQL(createPelanggan)
+
+        val createTrigger = """
+            CREATE TRIGGER delete_child_records 
+            BEFORE DELETE ON sumber 
+            FOR EACH ROW 
+            BEGIN 
+                DELETE FROM pemasukan WHERE id_sumber = OLD.id; 
+            END;
+        """.trimIndent()
+        db.execSQL(createTrigger)
 
         val createModal = """
             CREATE TABLE IF NOT EXISTS Modal (
@@ -210,7 +219,7 @@ class DBHelper(context: Context, factory: SQLiteDatabase.CursorFactory?) :
 
     fun getPemasukan():Cursor? {
         val db = this.readableDatabase
-        return db.rawQuery("SELECT pemasukan.*, sumber.nama AS nama FROM pemasukan JOIN sumber ON pemasukan.id_sumber = sumber.id", null)
+        return db.rawQuery("SELECT pemasukan.*, sumber.nama AS nama FROM pemasukan JOIN sumber ON pemasukan.id_sumber = sumber.id LIMIT 50", null)
     }
     //
     fun addPemasukan(id_sumber: Int, nilai: Int, catatan: String): Boolean {
@@ -272,7 +281,7 @@ class DBHelper(context: Context, factory: SQLiteDatabase.CursorFactory?) :
     // Ambil data bahan
     fun getBahan():Cursor? {
         val db = this.readableDatabase
-        return db.rawQuery("SELECT * FROM bahan", null)
+        return db.rawQuery("SELECT * FROM bahan LIMIT 50", null)
     }
     // Insert data bahan
     fun addBahan(name: String, harga: String): Boolean {

@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.database.Formatter
 import com.example.database.R
 import com.example.database.model.Pemasukan
 
@@ -23,15 +24,15 @@ class PemasukanAdapter(private var pemasukanList: List<Pemasukan>) :
         holder.nama.text = pemasukan.nama
         holder.tanggal.text = pemasukan.tanggal
 
-        var prefix = "Rp "
+        var prefix = ""
         if (pemasukan.nilai >= 0) {
             holder.nilai.setTextColor(holder.itemView.context.resources.getColor(R.color.greenMoney))
-            prefix = "+$prefix"
+            prefix = "+"
         } else {
             holder.nilai.setTextColor(holder.itemView.context.resources.getColor(R.color.redMoney))
-            prefix = "-$prefix"
+            prefix = "-"
         }
-        holder.nilai.text = prefix + pemasukan.nilai.toString()
+        holder.nilai.text = prefix + Formatter.toCurrency(pemasukan.nilai)
 
         holder.container.setOnClickListener {
             val intent = Intent(holder.itemView.context, PemasukanDetail::class.java)

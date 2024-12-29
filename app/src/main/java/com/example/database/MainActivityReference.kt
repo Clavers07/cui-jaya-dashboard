@@ -5,6 +5,8 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.database.databinding.ActivityMainReferencesBinding
 import com.example.database.model.DataClass
+import com.example.database.services.DBHelper
+import com.example.database.services.PdfGenerator
 
 class MainActivityReference : AppCompatActivity() {
 
