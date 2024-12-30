@@ -10,7 +10,7 @@
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@drawable/logo_cuy_jaya"
-        android:label="CUY JAYA"
+        android:label="CUI JAYA"
         android:requestLegacyExternalStorage="true"
         android:roundIcon="@drawable/logo_cuy_jaya"
         android:supportsRtl="true"
