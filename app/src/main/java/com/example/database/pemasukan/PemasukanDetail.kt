@@ -81,15 +81,15 @@ class PemasukanDetail : AppCompatActivity() {
 
                         // Menampilkan pesan Toast
                         if (res) {
-                            Toast.makeText(this, "$nama added to database", Toast.LENGTH_LONG).show()
+                            Toast.makeText(this, "Sumber $nama berhasil ditambahkan", Toast.LENGTH_LONG).show()
 
                             finish()
                         } else {
-                            Toast.makeText(this, "Failed to add $nama to database", Toast.LENGTH_LONG).show()
+                            Toast.makeText(this, "Gagal menambahkan $nama", Toast.LENGTH_LONG).show()
                         }
 //
                     } else {
-                        Toast.makeText(this, "Please enter both nama and alamat", Toast.LENGTH_LONG).show()
+                        Toast.makeText(this, "Masukkan nama dan alamat dengan benar!", Toast.LENGTH_LONG).show()
                     }
 
                 }
@@ -139,7 +139,7 @@ class PemasukanDetail : AppCompatActivity() {
 
                         if (updated > 0) {
                             // Menampilkan pesan sukses
-                            Toast.makeText(this, "update data id $id", Toast.LENGTH_LONG).show()
+                            Toast.makeText(this, "Berhasil memperbarui data pemasukan $id", Toast.LENGTH_LONG).show()
 
                             // Pindah halaman
                             val intent = Intent(this, ActivityPemasukan::class.java).also {

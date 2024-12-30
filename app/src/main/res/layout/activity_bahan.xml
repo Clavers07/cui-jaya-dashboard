@@ -52,6 +52,8 @@
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:drawableStart="@drawable/trend_down"
+            android:drawablePadding="16dp"
             android:text="Pengeluaran"
             android:textAlignment="center"
             android:textColor="@color/white"

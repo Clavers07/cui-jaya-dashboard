@@ -50,15 +50,15 @@ class BahanTambah : AppCompatActivity() {
 
                 // Menampilkan pesan Toast
                 if (res) {
-                    Toast.makeText(this, "$nameValue added to database", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, "Berhasil menambahkan pengeluaran $nameValue", Toast.LENGTH_LONG).show()
                 } else {
-                    Toast.makeText(this, "Failed to add $nameValue to database", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, "Gagal menambahkan pengeluaran $nameValue", Toast.LENGTH_LONG).show()
                 }
 //                // Membersihkan EditText
 //                binding.enterName.text.clear()
 //                binding.enterAge.text.clear()
             } else {
-                Toast.makeText(this, "Please enter both name and age", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Masukkan data dengan benar!", Toast.LENGTH_LONG).show()
             }
 
             finish()

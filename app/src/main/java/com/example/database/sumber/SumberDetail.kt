@@ -127,7 +127,7 @@ class SumberDetail : AppCompatActivity() {
 
                         if (updated > 0) {
                             // Menampilkan pesan sukses
-                            Toast.makeText(this, "update data id $id", Toast.LENGTH_LONG).show()
+                            Toast.makeText(this, "Berhasil perbarui data sumber $nama", Toast.LENGTH_LONG).show()
 
                             // Pindah halaman
                             finish()
@@ -136,7 +136,7 @@ class SumberDetail : AppCompatActivity() {
                             Toast.makeText(this, "Name not found", Toast.LENGTH_LONG).show()
                         }
                     } else {
-                        Toast.makeText(this, "Input nama dan alamat yang bener!", Toast.LENGTH_LONG).show()
+                        Toast.makeText(this, "Masukkan sumber dan alamat dengan benar!", Toast.LENGTH_LONG).show()
                     }
                 }
             }

@@ -27,7 +27,7 @@ import java.io.FileOutputStream
 
 class PdfGenerator {
 
-    // Method to generate PDF from database data
+    // Prototype
     fun generatePdfFromData(context: Context, data: List<DataClass>, fileName: String = "database_data") {
         try {
             val document = Document()
@@ -78,6 +78,7 @@ class PdfGenerator {
             Toast.makeText(context, "Error creating PDF: ${e.message}", Toast.LENGTH_SHORT).show()
         }
     }
+    // unused
     fun generatePemasukan(context: Context, data: List<DataClass>, date: String, fileName: String = "database_data") {
 
         try {
@@ -137,6 +138,7 @@ class PdfGenerator {
                 .show()
         }
     }
+    //unused
     fun customPdf(context: Context, data: List<DataClass>, date: String, fileName: String = "database_data") {
 
         try {
@@ -214,7 +216,7 @@ class PdfGenerator {
 
             // Add a title
             val titleFont = Font(Font.FontFamily.HELVETICA, 18f, Font.BOLD, BaseColor.BLACK)
-            val title = Paragraph("DATA PENJUALAN\nCUY JAYA", titleFont)
+            val title = Paragraph("DATA PEMASUKAN\nCUY JAYA", titleFont)
             title.alignment = Element.ALIGN_CENTER
             document.add(title)
 
@@ -304,11 +306,11 @@ class PdfGenerator {
             document.close()
 
             // Notify the user that the PDF has been generated
-            Toast.makeText(context, "PDF Created Successfully $filePath", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "PDF dibuat di: $filePath", Toast.LENGTH_SHORT).show()
             Log.d("PDF", "PDF Created Successfully $filePath")
         } catch (e: Exception) {
             e.printStackTrace()
-            Toast.makeText(context, "Error creating PDF: ${e.message}", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "Gagal membuat PDF: ${e.message}", Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -418,11 +420,11 @@ class PdfGenerator {
             document.close()
 
             // Notify the user that the PDF has been generated
-            Toast.makeText(context, "PDF Created Successfully $filePath", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "PDF dibuat di: $filePath", Toast.LENGTH_SHORT).show()
             Log.d("PDF", "PDF Created Successfully $filePath")
         } catch (e: Exception) {
             e.printStackTrace()
-            Toast.makeText(context, "Error creating PDF: ${e.message}", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "Gagal membuat PDF: ${e.message}", Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -442,7 +444,7 @@ class PdfGenerator {
 
             // Add a title
             val titleFont = Font(Font.FontFamily.HELVETICA, 18f, Font.BOLD, BaseColor.BLACK)
-            val title = Paragraph("DATA SUMBER\nCUY JAYA", titleFont)
+            val title = Paragraph("DATA  SUMBER PEMASUKAN\nCUY JAYA", titleFont)
             title.alignment = Element.ALIGN_CENTER
             document.add(title)
 
@@ -466,13 +468,12 @@ class PdfGenerator {
             noHeader.horizontalAlignment = Element.ALIGN_CENTER
             table.addCell(noHeader)
 
-            val namaHeader = PdfPCell(Phrase("Nama Sumber", headerFont))
+            val namaHeader = PdfPCell(Phrase("Sumber Pemasukan", headerFont))
             namaHeader.horizontalAlignment = Element.ALIGN_CENTER
             table.addCell(namaHeader)
 
-
             val alamatHeader = PdfPCell(Phrase("Alamat", headerFont))
-            namaHeader.horizontalAlignment = Element.ALIGN_CENTER
+            alamatHeader.horizontalAlignment = Element.ALIGN_CENTER
             table.addCell(alamatHeader)
 
             val nilaiPemasukanHeader = PdfPCell(Phrase("Nilai", headerFont))
@@ -541,11 +542,11 @@ class PdfGenerator {
             document.close()
 
             // Notify the user that the PDF has been generated
-            Toast.makeText(context, "PDF Created Successfully $filePath", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "PDF dibuat di: $filePath", Toast.LENGTH_SHORT).show()
             Log.d("PDF", "PDF Created Successfully $filePath")
         } catch (e: Exception) {
             e.printStackTrace()
-            Toast.makeText(context, "Error creating PDF: ${e.message}", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "Gagal membuat PDF: ${e.message}", Toast.LENGTH_SHORT).show()
         }
     }
 

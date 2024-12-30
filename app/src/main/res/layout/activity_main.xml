@@ -10,22 +10,36 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="20dp"
+
         android:background="@color/gamma"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        android:padding="8dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp">
 
-            <ImageView
-                android:id="@+id/logo"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginLeft="5dp"
-                android:src="@drawable/logo_cuy_jaya"
-                tools:ignore="MissingConstraints">
-            </ImageView>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/container"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:background="@drawable/stroke_putih"
+                app:cardCornerRadius="35dp"
+                app:cardElevation="0dp"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <ImageView
+                    android:id="@+id/logo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/logo_cuy_jaya"
+                    android:background="@drawable/stroke_putih"
+                    tools:ignore="MissingConstraints">
+                </ImageView>
+            </androidx.cardview.widget.CardView>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -38,7 +52,7 @@
                 android:layout_marginLeft="5dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toEndOf="@id/logo">
+                app:layout_constraintStart_toEndOf="@id/container">
 
             </TextView>
 
@@ -48,7 +62,6 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                android:layout_marginEnd="16dp"
                 app:layout_constraintEnd_toEndOf="parent">
 
                 <ImageView
