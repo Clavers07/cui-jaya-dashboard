@@ -50,6 +50,12 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        binding.info.setOnClickListener {
+            Intent(this, InfoActivity::class.java).also {
+                startActivity(it)
+            }
+        }
+
     }
 
     override fun onResume() {
