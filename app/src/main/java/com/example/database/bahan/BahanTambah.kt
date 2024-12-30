@@ -28,22 +28,15 @@ class BahanTambah : AppCompatActivity() {
             finish()
         }
 
-
         binding.simpan.setOnClickListener {
             val db = DBHelper(this, null)
 
             // Mengambil nilai dari EditText
             val nameValue = binding.namaBahan.text.toString().trim()
-            val hargaValue = binding.harga.text.toString()
-            var num : Int
-            try {
-                num = Formatter.onlyInt(hargaValue)
-            } catch (e: NumberFormatException) {
-                num = 0 // Handle invalid input
-            }
+            val hargaValue = Formatter.onlyInt(binding.harga.text.toString())
 
             // Cek apakah input valid
-            if (nameValue.isNotEmpty() && num != null) {
+            if (nameValue.isNotEmpty() && hargaValue >= 0) {
 
                 // Menambahkan data ke database
                 val res = db.addBahan(nameValue, hargaValue)

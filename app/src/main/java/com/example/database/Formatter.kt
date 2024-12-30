@@ -17,9 +17,6 @@ internal class Formatter {
             return if (clear == "") 0 else clear.toInt()
         }
 
-        fun toCurrency(number: Int, currency: String = "Rp"): String {
-
-            return "$currency ${easyRead(number)}"
-        }
+        fun toCurrency(number: Int, currency: String = "Rp"): String = "$currency ${easyRead(number)}"
     }
 }

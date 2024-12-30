@@ -31,7 +31,7 @@ class DBHelper(context: Context, factory: SQLiteDatabase.CursorFactory?) :
             CREATE TABLE IF NOT EXISTS bahan (
                 "id" INTEGER PRIMARY KEY AUTOINCREMENT, 
                 "namaBahan" TEXT,
-                "harga" STRING,
+                "harga" INT,
                 "tanggal" TEXT
             )
         """.trimIndent()
@@ -197,7 +197,7 @@ class DBHelper(context: Context, factory: SQLiteDatabase.CursorFactory?) :
         db.close()
         return result
     }
-    // Delete data bahan
+    // Delete data sumber
     fun deleteSumber(id: Int): Boolean {
         val db = this.writableDatabase
         val result = db.delete("sumber", "id=?", arrayOf(id.toString()))
@@ -258,7 +258,7 @@ class DBHelper(context: Context, factory: SQLiteDatabase.CursorFactory?) :
         db.close()
         return result
     }
-    // Delete data bahan
+    // Delete data Pemasukan
     fun deletePemasukan(id: String): Boolean {
         val db = this.writableDatabase
         val result = db.delete("pemasukan", "id=?", arrayOf(id))
@@ -284,7 +284,7 @@ class DBHelper(context: Context, factory: SQLiteDatabase.CursorFactory?) :
         return db.rawQuery("SELECT * FROM bahan LIMIT 50", null)
     }
     // Insert data bahan
-    fun addBahan(name: String, harga: String): Boolean {
+    fun addBahan(name: String, harga: Int): Boolean {
 
         val values = ContentValues().apply {
             put("namaBahan", name)

@@ -129,7 +129,7 @@ class PemasukanDetail : AppCompatActivity() {
                     val id = Formatter.onlyInt(binding.id.text.toString())
                     val nama = binding.nama.text.toString()
                     val alamat = binding.alamat.text.toString()
-                    val nilai = binding.nilai.text.toString().toInt()
+                    val nilai = Formatter.onlyInt(binding.nilai.text.toString())
                     val catatan = binding.catatan.text.toString()
 
                     // Cek apakah nama kosong
