@@ -55,6 +55,11 @@ class MainActivity : AppCompatActivity() {
                 startActivity(it)
             }
         }
+        binding.bantuan.setOnClickListener {
+            Intent(this, TutorialActivity::class.java).also {
+                startActivity(it)
+            }
+        }
 
     }
 

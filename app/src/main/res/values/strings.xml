@@ -16,4 +16,39 @@
     <string name="batalkan_string">Batalkan</string>
     <string name="simpan_string">Simpan</string>
     <string name="lihat_sumber"><u>Lihat Sumber Pemasukan</u></string>
+
+    <string name="sumber_1"><b>1.</b> Tekan tombol <b><i>Lihat Sumber Pemasukan</i></b></string>
+    <string name="sumber_2"><b>2.</b> Terdapat 2 sumber pemasukan default, yaitu <b>Penjualan Langsung</b> dan <b>Pesanan</b>, Anda dapat menghapus atau mengedit 2 sumber ini, atau menambahkan sumber baru dengan menekan tombol <b>Tambah Sumber Pemasukan</b> di bawah</string>
+    <string name="sumber_3"><b>3.</b> Masukkan nama sumber pemasukan (wajib), alamat (wajib), dan catatan (opsional), lalu tekan tombol <b>Simpan</b>, atau batal jika berubah pikiran</string>
+    <string name="sumber_4"><b>4.</b> Sumber pemasukan yang hari ini memiliki pemasukan akan ditampilkan totalnya di menu utama</string>
+    <string name="sumber_5"><b>5.</b> Anda dapat mengubah data sumber pemasukan dengan menekan tombol <b>Edit</b> di bawah tombol <b>+</b>, lalu <b>simpan</b> untuk menyimpan data baru</string>
+    <string name="sumber_6"><b>6.</b> Anda dapat menambahkan data pemasukan uang dengan menekan tombol <b>+</b> di sebelah kanan</string>
+    <string name="sumber_7"><b>7.</b> Anda dapat menghapus data sumber pemasukan dengan menekan tombol <b>edit</b>, kemudian menekan tombol <b>Hapus</b> di sebelah kiri</string>
+    <string name="sumber_8"><b>8.</b> Untuk mendapatkan data laporan pemasukan dari semua sumber, tekan tombol <b>Pdf</b> di kanan atas</string>
+    <string name="sumber_9"><b>9.</b> Lokasi penyimpanan ada di dalam folder <b>Penyimpanan Internal > Download > Data Sumber Pemasukan...pdf</b></string>
+
+    <string name="pemasukan_1"><b>1.</b> Masuk ke menu Pemasukan dengan menekan tombol <b>Pemasukan</b></string>
+    <string name="pemasukan_2"><b>2.</b> Tekan tombol <b>Tambah Pemasukan</b></string>
+    <string name="pemasukan_3"><b>3.</b> Pilih dari mana sumber pemasukan, lalu tekan tombol <b>+</b> nya</string>
+    <string name="pemasukan_4"><b>4.</b> Masukkan nilai pemasukan (wajib, format bebas asalkan ada nilainya), catatan (opsional), lalu tekan tombol <b>Simpan</b>, atau batal jika berubah pikiran</string>
+    <string name="pemasukan_5"><b>5.</b> Data total pemasukan akan ditampilkan di menu utama</string>
+    <string name="pemasukan_6"><b>6.</b> Anda dapat mengubah data pemasukan yang sudah ada dengan menekan tombol <b>Edit</b> di atas nilai pemasukan, lalu <b>simpan</b> untuk menyimpan data baru</string>
+    <string name="pemasukan_7"><b>7.</b> Anda dapat menghapus data pemasukan dengan masuk ke menu editnya, kemudian menekan tombol <b>Hapus</b> di sebelah kiri</string>
+    <string name="pemasukan_8"><b>8.</b> Untuk mendapatkan data laporan pemasukan dari semua sumber, tekan tombol <b>Pdf</b> di kanan atas</string>
+    <string name="pemasukan_9"><b>9.</b> Lokasi penyimpanan ada di dalam folder <b>Penyimpanan Internal > Download > Data Pemasukan...pdf</b></string>
+
+    <string name="bahan_1"><b>1.</b> Masuk ke menu Pengeluaran dengan menekan tombol <b>Pengeluaran</b></string>
+    <string name="bahan_2"><b>2.</b> Tekan tombol <b>Tambah Pengeluaran</b></string>
+    <string name="bahan_3"><b>3.</b> Masukkan nama judul pengeluaran (wajib), harga (wajib), dan catatan (opsional), lalu tekan tombol <b>Simpan</b>, atau <b>kembali</b> jika berubah pikiran</string>
+    <string name="bahan_4"><b>4.</b> Data total pengeluaran akan ditampilkan di menu utama</string>
+    <string name="bahan_5"><b>5.</b> Anda dapat mengubah data pengeluaran yang sudah ada dengan menekan tombol <b>pensil</b>, lalu <b>simpan</b> untuk menyimpan data baru</string>
+    <string name="bahan_6"><b>6.</b> Anda dapat menghapus data pengeluaran dengan menekan tombol <b>keranjang sampah</b></string>
+    <string name="bahan_7"><b>7.</b> Untuk mendapatkan data laporan pengeluaran, tekan tombol <b>Pdf</b> di kanan atas</string>
+    <string name="bahan_8"><b>8.</b> Lokasi penyimpanan ada di dalam folder <b>Penyimpanan Internal > Download > Data Pengeluaran...pdf</b></string>
+
+
+
+
+
+
 </resources>
