@@ -1,0 +1,7 @@
+Hak Cipta © 2024 dikembangkan oleh kelompok 9:
+    - Ahmad Rifaldi : 1062333
+    - Indah Lestari : 1062347
+    - Muhammad Kalam Sabili : 1062351
+
+Aplikasi ini dikembangkan sebagai proyek akhir mata kuliah Pemrograman Aplikasi Bergerak tahun ajaran 2024/2025.
+

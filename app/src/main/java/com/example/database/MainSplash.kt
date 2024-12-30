@@ -1,8 +1,10 @@
 package com.example.database
 
 import android.content.Intent
+import android.content.pm.PackageInfo
 import android.os.Bundle
 import android.widget.Button
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.inappmessaging.MessagesProto
@@ -18,6 +20,9 @@ class MainSplash : AppCompatActivity() {
         setContentView(R.layout.activity_splash)
 
         val start: Button = findViewById(R.id.start)
+        val version: TextView = findViewById(R.id.version)
+
+        version.text = "Versi: " + getVersionName()
 
         start.setOnClickListener {
             CoroutineScope(Dispatchers.Main).launch {
@@ -28,5 +33,24 @@ class MainSplash : AppCompatActivity() {
             }
         }
 
+    }
+    // Fungsi untuk mendapatkan versionName
+    private fun getVersionName(): String {
+        return try {
+            val packageInfo: PackageInfo = packageManager.getPackageInfo(packageName, 0)
+            packageInfo.versionName.toString()
+        } catch (e: Exception) {
+            "Unknown"
+        }
+    }
+
+    // Fungsi untuk mendapatkan versionCode
+    private fun getVersionCode(): Int {
+        return try {
+            val packageInfo: PackageInfo = packageManager.getPackageInfo(packageName, 0)
+            packageInfo.versionCode
+        } catch (e: Exception) {
+            -1
+        }
     }
 }
