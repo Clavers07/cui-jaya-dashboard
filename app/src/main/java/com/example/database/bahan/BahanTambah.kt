@@ -24,6 +24,9 @@ class BahanTambah : AppCompatActivity() {
         binding.back.setOnClickListener{
             finish()
         }
+        binding.kembali.setOnClickListener {
+            finish()
+        }
 
 
         binding.simpan.setOnClickListener {

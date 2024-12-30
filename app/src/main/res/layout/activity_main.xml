@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="20dp"
-        android:background="@color/second"
+        android:background="@color/gamma"
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -33,10 +33,10 @@
                 android:text="CUI JAYA"
                 android:textStyle="bold|italic"
                 android:textSize="30dp"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textAlignment="center"
                 android:layout_marginLeft="5dp"
-                android:layout_marginTop="15dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toEndOf="@id/logo">
 
@@ -47,23 +47,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toTopOf="parent"
-                android:layout_marginTop="15dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginEnd="12dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginEnd="16dp"
                 app:layout_constraintEnd_toEndOf="parent">
 
-                <FrameLayout
-                    android:layout_width="20dp"
-                    android:layout_height="25dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:background="@color/white"/>
-
                 <ImageView
-                    android:layout_width="45dp"
+                    android:layout_width="38dp"
                     android:background="@drawable/max_radius"
                     android:backgroundTint="@color/beta"
-                    android:layout_height="45dp"
+                    android:layout_height="38dp"
+                    android:contentDescription="About"
                     android:src="@drawable/about"/>
 
             </FrameLayout>
@@ -73,20 +66,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toTopOf="parent"
-                android:layout_marginTop="15dp"
-                android:layout_marginEnd="12dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginEnd="8dp"
                 app:layout_constraintEnd_toStartOf="@id/bantuan">
 
-                <FrameLayout
-                    android:layout_width="20dp"
-                    android:layout_height="25dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:background="@color/white"/>
-
                 <ImageView
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:contentDescription="Info"
                     android:background="@drawable/max_radius"
                     android:backgroundTint="@color/beta"
                     android:src="@drawable/info"/>
@@ -243,7 +230,8 @@
                                         android:layout_width="40dp"
                                         android:layout_height="40dp"
                                         android:layout_gravity="center"
-                                        android:src="@drawable/trend_up" />
+                                        android:src="@drawable/trend_up"
+                                        android:contentDescription="Pemasukan"/>
 
                                     <TextView
                                         android:layout_width="90dp"
@@ -273,7 +261,8 @@
                                         android:layout_width="40dp"
                                         android:layout_height="40dp"
                                         android:layout_gravity="center"
-                                        android:src="@drawable/trend_down" />
+                                        android:src="@drawable/trend_down"
+                                        android:contentDescription="Pemasukan"/>
 
                                     <TextView
                                         android:layout_width="90dp"
@@ -311,7 +300,7 @@
                             android:layout_height="wrap_content"
                             android:background="@drawable/bg_total"
                             android:padding="5dp"
-                            android:text="Lihat Sumber"
+                            android:text="@string/lihat_sumber"
                             android:textAlignment="center"
                             android:textColor="@color/black"
                             android:textSize="20dp"

@@ -11,7 +11,11 @@ internal class Formatter {
             return formattedNumber
         }
 
-        fun onlyInt(number: String) = number.replace(Regex("\\D"), "").toInt()
+        fun onlyInt(number: String): Int {
+            val clear: String = number.replace(Regex("\\D"), "")
+
+            return if (clear == "") 0 else clear.toInt()
+        }
 
         fun toCurrency(number: Int, currency: String = "Rp"): String {
 
