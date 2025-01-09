@@ -139,6 +139,7 @@ class DBHelper(context: Context, factory: SQLiteDatabase.CursorFactory?) :
         val db = this.readableDatabase
         return db.rawQuery("SELECT * FROM $TABLE_NAME", null)
     }
+
     fun timeNow(formatDate: String): String {
         val currentTime = System.currentTimeMillis()
         val dateFormat = android.text.format.DateFormat.format(formatDate, currentTime)
@@ -217,9 +218,16 @@ class DBHelper(context: Context, factory: SQLiteDatabase.CursorFactory?) :
         return total
     }
 
-    fun getPemasukan():Cursor? {
+    fun getPemasukan(tgl: String = ""):Cursor? {
         val db = this.readableDatabase
-        return db.rawQuery("SELECT pemasukan.*, sumber.nama AS nama FROM pemasukan JOIN sumber ON pemasukan.id_sumber = sumber.id LIMIT 50", null)
+        val altSql = "SELECT pemasukan.*, sumber.nama AS nama FROM pemasukan JOIN sumber ON pemasukan.id_sumber = sumber.id WHERE pemasukan.tanggal LIKE ? ORDER BY pemasukan.id DESC"
+
+        return if (tgl != "") {
+            db.rawQuery(altSql, arrayOf("%$tgl%"))
+        } else {
+            db.rawQuery("SELECT pemasukan.*, sumber.nama AS nama FROM pemasukan JOIN sumber ON pemasukan.id_sumber = sumber.id ORDER BY pemasukan.id DESC", null)
+        }
+
     }
     //
     fun addPemasukan(id_sumber: Int, nilai: Int, catatan: String): Boolean {
@@ -279,9 +287,14 @@ class DBHelper(context: Context, factory: SQLiteDatabase.CursorFactory?) :
         return total
     }
     // Ambil data bahan
-    fun getBahan():Cursor? {
+    fun getBahan(tgl: String = ""):Cursor? {
         val db = this.readableDatabase
-        return db.rawQuery("SELECT * FROM bahan LIMIT 50", null)
+        val alterSql = "SELECT * FROM bahan WHERE tanggal LIKE ? ORDER BY id DESC"
+        Log.d("DBHelper", "getBahan: $tgl")
+
+        return if (tgl != "") {
+            db.rawQuery(alterSql, arrayOf("%$tgl%"))
+        } else db.rawQuery("SELECT * FROM bahan ORDER BY id DESC", null)
     }
     // Insert data bahan
     fun addBahan(name: String, harga: Int): Boolean {
@@ -390,5 +403,12 @@ class DBHelper(context: Context, factory: SQLiteDatabase.CursorFactory?) :
         const val ID_COL = "id"
         const val NAME_COL = "name"
         const val AGE_COL = "age"
+
+        fun nowTime(formatDate: String): String {
+            val currentTime = System.currentTimeMillis()
+            val dateFormat = android.text.format.DateFormat.format(formatDate, currentTime)
+
+            return dateFormat.toString()
+        }
     }
 }

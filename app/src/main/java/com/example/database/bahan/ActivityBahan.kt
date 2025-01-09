@@ -22,6 +22,7 @@ class ActivityBahan : AppCompatActivity() {
     private lateinit var binding: ActivityBahanBinding
 
     var sum: Int = 0
+    var filter: String = ""
 
     private lateinit var bahan: MutableList<Bahan>
     private lateinit var bahanAdapter: BahanAdapter
@@ -79,10 +80,55 @@ class ActivityBahan : AppCompatActivity() {
                     lists.add(DataClass(id, name, age))
                 }
             }
-
-
-            pdf.bahanPdf(this, bahan, date, "Laporan_Pengeluaran")
+            pdf.bahanPdf(this, bahan, date, "Laporan_Pengeluaran", filter)
         }
+        fun resetBtn() {
+            binding.all.backgroundTintList = ContextCompat.getColorStateList(this, R.color.delta)
+            binding.all.setTextColor(ContextCompat.getColor(this, R.color.white))
+
+            binding.today.backgroundTintList = ContextCompat.getColorStateList(this, R.color.delta)
+            binding.today.setTextColor(ContextCompat.getColor(this, R.color.white))
+
+            binding.thisMonth.backgroundTintList = ContextCompat.getColorStateList(this, R.color.delta)
+            binding.thisMonth.setTextColor(ContextCompat.getColor(this, R.color.white))
+
+            binding.thisYear.backgroundTintList = ContextCompat.getColorStateList(this, R.color.delta)
+            binding.thisYear.setTextColor(ContextCompat.getColor(this, R.color.white))
+        }
+
+        binding.all.setOnClickListener {
+            resetBtn()
+            binding.all.backgroundTintList = ContextCompat.getColorStateList(this, R.color.white)
+            binding.all.setTextColor(ContextCompat.getColor(this, R.color.delta))
+            filter = DBHelper.nowTime("")
+            show()
+            setView()
+        }
+        binding.today.setOnClickListener {
+            resetBtn()
+            binding.today.backgroundTintList = ContextCompat.getColorStateList(this, R.color.white)
+            binding.today.setTextColor(ContextCompat.getColor(this, R.color.delta))
+            filter = DBHelper.nowTime("dd MMM yyyy")
+            show()
+            setView()
+        }
+        binding.thisMonth.setOnClickListener {
+            resetBtn()
+            binding.thisMonth.backgroundTintList = ContextCompat.getColorStateList(this, R.color.white)
+            binding.thisMonth.setTextColor(ContextCompat.getColor(this, R.color.delta))
+            filter = DBHelper.nowTime("MMM yyyy")
+            show()
+            setView()
+        }
+        binding.thisYear.setOnClickListener {
+            resetBtn()
+            binding.thisYear.backgroundTintList = ContextCompat.getColorStateList(this, R.color.white)
+            binding.thisYear.setTextColor(ContextCompat.getColor(this, R.color.delta))
+            filter = DBHelper.nowTime("yyyy")
+            show()
+            setView()
+        }
+
 
     }
 
@@ -99,7 +145,7 @@ class ActivityBahan : AppCompatActivity() {
         sum = 0
 
         // Mendapatkan semua data nama dari database
-        val cursor = db.getBahan()
+        val cursor = db.getBahan(filter)
         val size = cursor
 
         // Memeriksa apakah cursor tidak null

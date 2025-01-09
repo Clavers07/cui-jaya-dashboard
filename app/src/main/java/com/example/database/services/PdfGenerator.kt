@@ -200,7 +200,7 @@ class PdfGenerator {
         }
     }
 
-    fun pemasukanPdf(context: Context, data: List<Pemasukan>, date: String, fileName: String = "database_data") {
+    fun pemasukanPdf(context: Context, data: List<Pemasukan>, date: String, fileName: String = "database_data", filter: String = "") {
 
         try {
             val document = Document()
@@ -221,6 +221,13 @@ class PdfGenerator {
             document.add(title)
 
             var sum: Int = 0
+
+            if (filter != "") { // Text filter jika ada
+                val filterFont = Font(Font.FontFamily.HELVETICA, 11f, Font.NORMAL, BaseColor.BLACK)
+                val filterText = Paragraph("untuk: $filter", filterFont)
+                filterText.alignment = Element.ALIGN_LEFT
+                document.add(filterText)
+            }
 
             // Add a new line
             document.add(Chunk.NEWLINE)
@@ -314,7 +321,7 @@ class PdfGenerator {
         }
     }
 
-    fun bahanPdf(context: Context, data: List<Bahan>, date: String, fileName: String = "database_data") {
+    fun bahanPdf(context: Context, data: List<Bahan>, date: String, fileName: String = "database_data", filter: String = "") {
 
         try {
             val document = Document()
@@ -335,6 +342,13 @@ class PdfGenerator {
             document.add(title)
 
             var sum: Int = 0
+
+            if (filter != "") { // Text filter jika ada
+                val filterFont = Font(Font.FontFamily.HELVETICA, 11f, Font.NORMAL, BaseColor.BLACK)
+                val filterText = Paragraph("untuk: $filter", filterFont)
+                filterText.alignment = Element.ALIGN_LEFT
+                document.add(filterText)
+            }
 
             // Add a new line
             document.add(Chunk.NEWLINE)
