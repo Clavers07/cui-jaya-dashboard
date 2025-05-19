@@ -1,8 +1,9 @@
 <resources>
-    <string name="app_name">Database</string>
+    <string name="app_name">Konsinyasi</string>
 
     <string name="dummy_panjang">Back then, I had no idea what I was doing. I was learning the tool on the go and scrambling to keep up with my peers who seemed to be miles ahead of me when it came to proficiency in the tool.</string>
     <string name="edit"><u>Edit</u></string>
+
 
 
     <string name="ek_img_content">ExportKit Image</string>

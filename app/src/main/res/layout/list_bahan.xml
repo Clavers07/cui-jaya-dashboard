@@ -10,17 +10,19 @@
     android:paddingTop="10dp"
     android:paddingLeft="10dp"
     android:paddingRight="10dp"
+    android:backgroundTint="@color/sec_bg"
     android:background="@drawable/bg_pilihan">
 
     <TextView
         android:id="@+id/namaBahan"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:textColor="@color/black"
+        android:textColor="@color/main_font"
         android:textStyle="bold"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="30dp"
-        android:text="1: Tepung"
+        android:text="Tepung"
+        android:fontFamily="@font/inter"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,42 +33,44 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/namaBahan"
         app:layout_constraintStart_toStartOf="@id/namaBahan"
-        android:text="Rp 900000"/>
+        android:text="Rp 900000"
+        android:fontFamily="@font/inter"/>
 
     <TextView
         android:id="@+id/date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="19 februari 2024"
+        android:fontFamily="@font/inter"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/edit"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
         android:layout_marginRight="5dp"
         android:layout_marginBottom="10dp"
-        android:src="@drawable/baseline_edit_24"
-        android:background="@drawable/bg_adapter"
+        android:background="@null"
+        android:src="@drawable/outline_edit_20"
         app:layout_constraintTop_toBottomOf="@id/date"
         app:layout_constraintEnd_toStartOf="@+id/hapus"
         app:layout_constraintBottom_toBottomOf="parent"/>
     <ImageButton
         android:id="@+id/hapus"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
         android:layout_marginBottom="10dp"
-        android:src="@drawable/baseline_delete_forever_24"
-        android:background="@drawable/bg_adapter"
+        android:background="@null"
+        android:src="@drawable/baseline_delete_outline_20"
         app:layout_constraintTop_toBottomOf="@id/date"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:background="@color/white"
+        android:layout_height="1dp"
+        android:background="@color/grey"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/edit"
         android:layout_marginTop="10dp"/>

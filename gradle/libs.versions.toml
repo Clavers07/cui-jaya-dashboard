@@ -27,6 +27,7 @@ androidx-constraintlayout = { group = "androidx.constraintlayout", name = "const
 #itext7-core = { module = "com.itextpdf:itext7-core", version.ref = "itext7-core" }
 #openpdf = { group = "com.github.librepdf", name = "openpdf", version.ref = "openpdf" }
 itextpdf = {group = "com.itextpdf", name = "itextpdf", version = "5.5.13.2"}
+mpandroidchart = {group = "com.github.PhilJay", name = "MPAndroidChart", version = "3.1.0"}
 firebase-inappmessaging-ktx = { group = "com.google.firebase", name = "firebase-inappmessaging-ktx", version.ref = "firebaseInappmessagingKtx" }
 
 [plugins]

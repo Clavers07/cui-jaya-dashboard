@@ -4,17 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@color/sec_bg"
     android:paddingBottom="2dp">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="5dp">
+        app:cardCornerRadius="5dp"
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:background="@color/third_bg"
             android:padding="16dp">
 
             <LinearLayout
@@ -69,12 +72,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="confirmed"
-                        android:textColor="@color/black"
+                        android:fontFamily="@font/inter"
+                        android:textColor="@color/main_font"
                         android:textSize="16sp"
                         android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/tanggal"
+                        android:fontFamily="@font/inter"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="16 September 2024 15:54"
@@ -92,8 +97,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="8dp"
-                        android:text="Total pemasukan:"
+                        android:text="Total pendapatan:"
                         android:textSize="11sp"
+                        android:fontFamily="@font/inter"
                         app:layout_constraintEnd_toStartOf="@id/tambah"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -105,6 +111,7 @@
                         android:text="Rp 9000000"
                         android:textColor="@color/greenMoney"
                         android:textSize="16sp"
+                        android:fontFamily="@font/inter"
                         android:textStyle="bold"
                         app:layout_constraintEnd_toStartOf="@id/tambah"
                         app:layout_constraintTop_toBottomOf="@id/headerTotal" />
@@ -115,7 +122,9 @@
                         android:layout_height="36dp"
                         android:background="@drawable/stroke_hitam"
                         android:backgroundTint="@color/greenMoney"
+                        android:fontFamily="@font/inter"
                         android:text="+"
+                        android:textAlignment="center"
                         android:textColor="@color/white"
                         android:textSize="24sp"
                         android:textStyle="bold"
@@ -152,6 +161,7 @@
                     android:layout_marginEnd="16dp"
                     android:layout_weight="1"
                     android:gravity="top"
+                    android:fontFamily="@font/inter"
                     android:padding="0dp"
                     android:text="confirmed"
                     android:textSize="11sp"
@@ -171,6 +181,7 @@
 
                         android:layout_weight="0"
                         android:text="@string/edit"
+                        android:fontFamily="@font/inter"
                         android:textColor="@color/greenMoney"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"

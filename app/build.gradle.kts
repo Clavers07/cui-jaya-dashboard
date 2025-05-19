@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.database"
+    namespace = "com.example.konsinyasi"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.database"
+        applicationId = "com.example.konsinyasi"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -52,9 +52,11 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 //    implementation(libs.itext7.core)
     implementation(libs.itextpdf)
+    implementation(libs.mpandroidchart)
 //    implementation(libs.com.itextpdf.itextg)
 //    implementation("com.itextpdf:itext7-core:7.1.15")
 //    implementation("com.github.librepdf:openpdf:1.3.30")
 
 //    implementation "com.itextpdf:itext7-core:7.2.6"
+
 }

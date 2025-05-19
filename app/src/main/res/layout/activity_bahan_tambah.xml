@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/utama">
+    android:background="@color/sec_bg">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/header"
@@ -18,10 +18,7 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/kembali"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:layout_marginStart="20dp"
-            android:background="@drawable/baseline_arrow_back_ios_new_24"
+            style="@style/back"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -30,14 +27,11 @@
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:drawableStart="@drawable/add"
-            android:drawableEnd="@drawable/trend_down"
-            android:drawablePadding="16dp"
             android:text="Pengeluaran"
+            android:fontFamily="@font/inter_bold"
             android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="36dp"
-            android:textStyle="bold|italic"
+            android:textColor="@color/main_font"
+            android:textSize="17dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -51,6 +45,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/bg_bahan"
         android:padding="30dp"
+        android:backgroundTint="@color/main_bg"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent">
 
@@ -58,6 +53,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
+            android:padding="8dp"
+            android:background="@drawable/btn_radius_6"
+            android:backgroundTint="@color/sec_bg"
             android:layout_marginTop="100dp"
             android:layout_marginBottom="100dp">
 
@@ -65,23 +63,29 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Pengeluaran:"
-                android:textSize="20dp"/>
+                android:textColor="@color/main_font"
+                android:fontFamily="@font/inter"
+                android:textSize="16dp"/>
 
             <EditText
                 android:id="@+id/namaBahan"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:hint="Pengeluaran untuk barang.."
+                android:textColor="@color/main_font"
+                android:backgroundTint="@color/fills"
                 android:paddingLeft="10dp"
+                android:fontFamily="@font/inter"
                 android:layout_marginBottom="20dp"
-                android:textColor="@color/black"
                 android:background="@drawable/bg_input"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Nilai:"
-                android:textSize="20dp"/>
+                android:textColor="@color/main_font"
+                android:fontFamily="@font/inter"
+                android:textSize="16dp"/>
 
             <EditText
                 android:id="@+id/harga"
@@ -89,9 +93,11 @@
                 android:layout_height="50dp"
                 android:background="@drawable/bg_input"
                 android:paddingStart="10dp"
+                android:fontFamily="@font/inter"
                 android:hint="Nilai uang yang dikeluarkan"
                 android:layout_marginBottom="50dp"
-                android:textColor="@color/black" />
+                android:backgroundTint="@color/fills"
+                android:textColor="@color/main_font" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/simpan"
@@ -99,8 +105,10 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/button_save"
                 android:text="Simpan"
-                android:textColor="@color/white"
+                android:backgroundTint="@color/sec_bg"
+                android:textColor="@color/ios_blue"
                 android:textSize="20dp"
+                android:fontFamily="@font/inter"
                 android:textStyle="bold"
                 android:layout_marginBottom="10dp"/>
 
@@ -109,6 +117,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Kembali"
+                android:fontFamily="@font/inter"
+                android:backgroundTint="@color/sec_bg"
+                android:textColor="@color/main_font"
                 android:background="@drawable/button_back"
                 android:textSize="20dp"
                 android:textStyle="bold"/>

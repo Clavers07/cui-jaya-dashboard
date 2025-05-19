@@ -35,4 +35,13 @@
     <color name="__rp_900_000_color">#008416</color>
     <color name="batalkan_color">#FFFFFF</color>
     <color name="simpan_color">#FFFEFE</color>
+
+    <color name="ios_blue">#007AFF</color>
+    <color name="current_menu">#000000</color>
+    <color name="main_bg">#F2F2F7</color>
+    <color name="sec_bg">#FFFFFF</color>
+    <color name="main_font">#000000</color>
+    <color name="third_bg">#F2F2F7</color>
+    <color name="grey">#C5C5C7</color>
+    <color name="fills">#EFEFF0</color>
 </resources>

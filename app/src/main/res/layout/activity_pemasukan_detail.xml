@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
-    android:background="@color/white"
+    android:background="@color/main_bg"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".pemasukan.PemasukanDetail">
@@ -12,6 +12,7 @@
         android:id="@+id/header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/sec_bg"
         android:background="@drawable/bg_judul"
         android:paddingTop="8dp"
         android:paddingBottom="8dp"
@@ -21,10 +22,7 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/kembali"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:layout_marginStart="20dp"
-            android:background="@drawable/baseline_arrow_back_ios_new_24"
+            style="@style/back"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -33,14 +31,12 @@
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:drawableStart="@drawable/add"
-            android:drawableEnd="@drawable/trend_up"
             android:drawablePadding="16dp"
             android:text="Pemasukan"
+            android:fontFamily="@font/inter_bold"
             android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="36dp"
-            android:textStyle="bold|italic"
+            android:textColor="@color/main_font"
+            android:textSize="17dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -143,7 +139,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="Miniarti"
-                                    android:textColor="@color/black"
+                                    android:textColor="@color/main_font"
                                     android:textSize="16sp"
                                     android:textStyle="bold" />
 
@@ -195,6 +191,53 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/container_titipan"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="8dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/label_nilai_titipan"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="4dp"
+                            android:text="Nilai titipan:"
+                            android:textColor="@color/main_font"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/rpt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="4dp"
+                                android:layout_weight="0"
+                                android:text="Rp"
+                                android:textColor="@color/main_font"
+                                android:textStyle="bold" />
+
+                            <EditText
+                                android:id="@+id/nilai_titipan"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/stroke_hitam"
+                                android:gravity="center|start"
+                                android:hint="1xxxxxxxx0"
+                                android:padding="8dp"
+                                android:text=""
+                                android:textColor="@color/main_font"
+                                android:textSize="16sp" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/container_nilai"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginTop="8dp"
@@ -205,7 +248,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="4dp"
-                            android:text="Jumlah:"
+                            android:text="Pendapatan bersih:"
                             android:textColor="@color/greenMoney"
                             android:textStyle="bold" />
 
@@ -240,6 +283,52 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/container_komisi"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="8dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/label_komisi"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="4dp"
+                            android:text="Komisi mitra:"
+                            android:textColor="@color/main_font"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/rpk"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="4dp"
+                                android:layout_weight="0"
+                                android:text="Rp"
+                                android:textColor="@color/main_font"
+                                android:textStyle="bold" />
+
+                            <EditText
+                                android:id="@+id/nilai_komisi"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/stroke_hitam"
+                                android:gravity="center|start"
+                                android:hint="1xxxxxxxx0"
+                                android:padding="8dp"
+                                android:text=""
+                                android:textColor="@color/main_font"
+                                android:textSize="16sp" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginTop="8dp"
@@ -251,7 +340,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="4dp"
                             android:text="Catatan:"
-                            android:textColor="@color/black"
+                            android:textColor="@color/main_font"
                             android:textStyle="bold" />
 
                         <EditText
@@ -295,7 +384,7 @@
                             android:background="@drawable/stroke_hitam"
                             android:text="Batal"
                             android:textAllCaps="false"
-                            android:textColor="@color/black"
+                            android:textColor="@color/main_font"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toStartOf="@id/simpan"
                             app:layout_constraintTop_toTopOf="parent" />

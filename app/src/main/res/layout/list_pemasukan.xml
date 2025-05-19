@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/alpha"
     android:layout_marginBottom="2dp"
     android:orientation="vertical">
 
@@ -71,8 +70,9 @@
                         android:id="@+id/nama"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter"
                         android:text="confirmed"
-                        android:textColor="@color/black"
+                        android:textColor="@color/main_font"
                         android:textSize="16sp"
                         android:textStyle="bold" />
 
@@ -81,6 +81,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="16 September 2024 15:54"
+                        android:fontFamily="@font/inter"
                         android:textSize="11sp" />
 
                 </LinearLayout>
@@ -95,6 +96,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/edit"
+                        android:fontFamily="@font/inter"
                         android:textSize="11sp"
                         android:textAlignment="textEnd"
                         android:textColor="@color/greenMoney"
@@ -106,6 +108,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Rp 9000000"
+                        android:fontFamily="@font/inter"
                         android:textColor="@color/greenMoney"
                         android:textSize="16sp"
                         android:textStyle="bold"
